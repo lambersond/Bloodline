@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="charsheet_main" merge="join">
+		<sheetdata merge="join">
+			<number_charabilityscore name="bloodline" source="abilities.bloodline.score">
+				<target>bloodline</target>
+			</number_charabilityscore>
+			<label_abilityscore>
+				<anchored to="bloodline" />
+				<static textres="BLO" />
+			</label_abilityscore>
+			<hn name="bloodline_bonus" source="abilities.bloodline.bonus" />
+			<string_abilitymodtext name="bloodline_modtext">
+				<anchored to="bloodline" />
+			</string_abilitymodtext>
+			
+			<number_charabilitysave name="bloodlinesave" source="abilities.bloodline.save">
+				<target>bloodline</target>
+				<modifierfield>abilities.bloodline.savemodifier</modifierfield>
+			</number_charabilitysave>
+			<button_saveprof name="bloodlinesaveprof" source="abilities.bloodline.saveprof">
+				<anchored to="bloodlinesave" />
+			</button_saveprof>
+			<label_chardefense>
+				<anchored to="bloodlinesave" />
+				<static textres="BLO" />
+			</label_chardefense>
+			
+		</sheetdata>
+	</windowclass>
+</root>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="npc_combat" merge="join">
+		<script file="campaign/scripts/npc_main.lua" />
+		<sheetdata merge="join">
+			<number_npc_abilityscore name="strength" source="abilities.strength.score">
+				<anchored merge="replace" width="40" height="30">
+					<top parent="columnanchor" anchor="bottom" relation="relative" offset="12" />
+					<left anchor="left" offset="4" />
+				</anchored>
+				<target>strength</target>
+			</number_npc_abilityscore>
+			
+			<number_npc_abilityscore name="bloodline" source="abilities.bloodline.score">
+				<anchored merge="replace" to="charisma" width="40" height="30">
+					<top />
+					<left anchor="right" relation="relative" offset="30" />
+				</anchored>
+				<target>bloodline</target>
+			</number_npc_abilityscore>
+			<label_npc_abilityscore>
+				<anchored to="bloodline" />
+				<static textres="BLO" />
+			</label_npc_abilityscore>
+			<hn name="bloodline_bonus" source="abilities.bloodline.bonus" />
+			<string_npc_abilitymodtext name="bloodline_modtext">
+				<anchored to="bloodline" />
+			</string_npc_abilitymodtext>
+			<button_npcabilitycheck>
+				<anchored to="bloodline" />
+				<target>bloodline</target>
+			</button_npcabilitycheck>
+			<button_npcabilitysave>
+				<anchored to="bloodline" />
+				<target>bloodline</target>
+			</button_npcabilitysave>
+		</sheetdata>
+	</windowclass>
+</root>

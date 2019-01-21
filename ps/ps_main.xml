@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- 
+  Please see the license.html file included with this distribution for 
+  attribution and copyright information.
+-->
+
+<root>
+	<windowclass name="ps_main" merge="join">
+		<sheetdata merge="join">
+			<label_ps name="abilitieslabel">
+				<anchored width="210" />
+			</label_ps>
+			<label_ps name="blolabel">
+				<anchored to="chalabel" position="righthigh" offset="8,0" width="25" />
+				<static textres="blo" />
+				<center />
+			</label_ps>
+			<label_ps name="aclabel">
+				<anchored offset="20,0" />
+			</label_ps>
+		</sheetdata>
+	</windowclass>
+
+	<windowclass name="ps_mainitem" merge="join">
+		<sheetdata merge="join">
+			<number_ps_ability name="bloodline">
+				<anchored to="charisma" />
+			</number_ps_ability>		
+			<number_ps_abilitybonus name="blobonus">
+				<anchored to="bloodline" />
+				<target>bloodline</target>
+			</number_ps_abilitybonus>	
+			
+			<number_ps_defense name="ac">
+				<anchored to="charisma">
+					<left offset="42" />
+				</anchored>
+			</number_ps_defense>			
+		</sheetdata>
+	</windowclass>
+</root>
